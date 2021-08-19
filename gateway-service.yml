@@ -3,14 +3,14 @@ spring:
     gateway:
       routes:
         - id: user_route
-          uri: http://localhost:10100/
+          uri: lb://user-service
           predicates:
             - Path=/user/**
         - id: product_route
-          uri: http://localhost:10110/
+          uri: lb://product-service
           predicates:
             - Path=/product/**
         - id: payment_route
-          uri: http://localhost:10120/
+          uri: lb://payment-service
           predicates:
             - Path=/payment/**
